@@ -12,16 +12,42 @@ body{
     background:#f5efe6;
     color:#4a4038;
 }
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#ffffff;
+    color:#4a4038;
+}
 
 .hero{
     text-align:center;
     padding:120px 20px;
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff,
+            #faf8f4
+        );
+}
+
+.monogram{
+    font-size:28px;
+    color:#b08a4f;
+    letter-spacing:8px;
+    margin-bottom:30px;
 }
 
 .hero h1{
-    color:#c8a264;
-    font-size:70px;
+    color:#7b1e2b;
+    font-family:cursive;
+    font-size:80px;
     margin-bottom:10px;
+}
+
+.hero h2{
+    letter-spacing:6px;
+    color:#b08a4f;
+    font-weight:normal;
 }
 
 .hero h2{
@@ -42,19 +68,21 @@ body{
 
 .card{
     background:white;
-    padding:30px;
-    margin-bottom:25px;
-    border-radius:20px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    padding:40px;
+    margin-bottom:30px;
+    border-radius:25px;
+    border:1px solid #f0e3c5;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
 h3{
-    color:#c8a264;
+    color:#b08a4f;
+    font-size:32px;
 }
 
 .button{
     display:inline-block;
-    background:#c8a264;
+    background:#7b1e2b;
     color:white;
     padding:10px 16px;
     text-decoration:none;
@@ -80,11 +108,16 @@ input,select{
 <body>
 
 <div class="hero">
+    <div class="monogram">J & S</div>
+
     <h1>Jelena & Sergej</h1>
+
     <h2>17 OCTOBER 2026</h2>
+
     <p>
-        We invite you to celebrate our wedding day.
+        Together with our families, we invite you to celebrate our wedding day.
     </p>
+
 </div>
 
 <div class="container">
@@ -123,7 +156,10 @@ input,select{
 
     <div class="card">
         <h3>RSVP</h3>
-
+        
+<p style="margin-bottom:20px;">
+    Please note that each invitation is issued to specific named guest(s) and is not transferable. We kindly ask that only the person(s) named on the invitation respond and attend.
+</p>
         <label>Name(s) on invitation</label>
         <input type="text">
 
@@ -158,7 +194,12 @@ input,select{
 </div>
 
 <div class="footer">
-    Every love story is beautiful, but ours is our favorite.
+    ✦
+    <br><br>
+    Every love story is beautiful,
+    but ours is our favorite.
+    <br><br>
+    Jelena & Sergej
 </div>
 
 </body>
