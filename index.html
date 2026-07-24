@@ -3,67 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jelena & Sergej</title>
+
+<title>Jelena & Sergej | 17 October 2026</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Georgia, serif;
-    background:#f5efe6;
-    color:#4a4038;
+:root{
+    --burgundy:#7b1e2b;
+    --gold:#b08a4f;
+    --gold-light:#e8d8b7;
+    --text:#4a4038;
+    --white:#ffffff;
+    --cream:#faf7f2;
 }
-body{
+
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--white);
+    color:var(--text);
     font-family:Georgia, serif;
-    background:#ffffff;
-    color:#4a4038;
+    line-height:1.6;
 }
 
 .hero{
     text-align:center;
-    padding:120px 20px;
-    background:
-        linear-gradient(
-            to bottom,
-            #ffffff,
-            #faf8f4
-        );
+    padding:120px 20px 100px;
+    background:linear-gradient(
+        to bottom,
+        #ffffff,
+        #faf7f2
+    );
+    border-bottom:1px solid var(--gold-light);
 }
 
 .monogram{
-    font-size:28px;
-    color:#b08a4f;
+    color:var(--gold);
     letter-spacing:8px;
-    margin-bottom:30px;
+    font-size:24px;
+    margin-bottom:25px;
 }
 
 .hero h1{
-    color:#7b1e2b;
+    font-size:72px;
+    color:var(--burgundy);
     font-family:cursive;
-    font-size:80px;
-    margin-bottom:10px;
-}
-
-.hero h2{
-    letter-spacing:6px;
-    color:#b08a4f;
     font-weight:normal;
 }
 
+.decorative-line{
+    width:120px;
+    height:2px;
+    background:var(--gold);
+    margin:25px auto;
+}
+
 .hero h2{
+    color:var(--gold);
     letter-spacing:5px;
     font-weight:normal;
 }
 
 .hero p{
-    max-width:600px;
-    margin:20px auto;
+    max-width:650px;
+    margin:25px auto 0;
+    font-size:18px;
 }
 
 .container{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
-    padding:20px;
+    padding:40px 20px;
 }
 
 .card{
@@ -71,136 +84,64 @@ body{
     padding:40px;
     margin-bottom:30px;
     border-radius:25px;
-    border:1px solid #f0e3c5;
-    box-shadow:0 10px 25px rgba(0,0,0,.06);
+    border:1px solid var(--gold-light);
+    box-shadow:0 8px 24px rgba(0,0,0,0.06);
 }
 
 h3{
-    color:#b08a4f;
-    font-size:32px;
+    color:var(--gold);
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.timeline{
+    margin-bottom:25px;
+}
+
+.time{
+    color:var(--burgundy);
+    font-size:24px;
+    font-weight:bold;
 }
 
 .button{
     display:inline-block;
-    background:#7b1e2b;
+    background:var(--burgundy);
     color:white;
-    padding:10px 16px;
     text-decoration:none;
+    padding:12px 20px;
     border-radius:30px;
     margin-top:10px;
 }
 
-input,select{
+.button:hover{
+    background:#631824;
+}
+
+.notice{
+    background:var(--cream);
+    border-left:5px solid var(--gold);
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input,
+select{
     width:100%;
     padding:12px;
-    margin:8px 0 15px;
     border:1px solid #ddd;
     border-radius:8px;
+    margin-bottom:15px;
 }
 
 .footer{
     text-align:center;
-    padding:50px;
-    font-style:italic;
-}
-</style>
-</head>
-<body>
-
-<div class="hero">
-    <div class="monogram">J & S</div>
-
-    <h1>Jelena & Sergej</h1>
-
-    <h2>17 OCTOBER 2026</h2>
-
-    <p>
-        Together with our families, we invite you to celebrate our wedding day.
-    </p>
-
-</div>
-
-<div class="container">
-
-    <div class="card">
-        <h3>Wedding Day</h3>
-
-        <p>
-            <strong>13:30</strong><br>
-            Church Ceremony<br>
-            Hram Svete Petke, Rušanj
-        </p>
-
-        https://www.google.com/maps/search/Hram+Svete+Petke+Rusanj
-
-        <hr style="margin:25px 0;">
-
-        <p>
-            <strong>15:45</strong><br>
-            Civil Ceremony<br>
-            Garden Hill, Novi Beograd
-        </p>
-
-        https://www.google.com/maps/search/Garden+Hill+Novi+Beograd
-    </div>
-
-    <div class="card">
-        <h3>Accommodation</h3>
-
-        <p>
-            Accommodation is available at Garden Hill.
-            <br><br>
-            €25 per person / one night.
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>RSVP</h3>
-        
-<p style="margin-bottom:20px;">
-    Please note that each invitation is issued to specific named guest(s) and is not transferable. We kindly ask that only the person(s) named on the invitation respond and attend.
-</p>
-        <label>Name(s) on invitation</label>
-        <input type="text">
-
-        <label>Will you attend?</label>
-        <select>
-            <option>Yes, with pleasure</option>
-            <option>Regretfully decline</option>
-        </select>
-
-        <label>Would you like accommodation?</label>
-        <select>
-            <option>Yes</option>
-            <option>No</option>
-        </select>
-    </div>
-
-    <div class="card">
-        <h3>Little Ones</h3>
-
-        <p>
-            We love your little ones. As there will be no dedicated children's entertainment area during the celebration, we would be delighted if you could enjoy a grown‑ups' evening with us.
-        </p>
-
-        <p>
-            If bringing your children is necessary, please let us know their names and ages.
-        </p>
-
-        <input type="text" placeholder="Child Name">
-        <input type="number" placeholder="Age">
-    </div>
-
-</div>
-
-<div class="footer">
-    ✦
-    <br><br>
-    Every love story is beautiful,
-    but ours is our favorite.
-    <br><br>
-    Jelena & Sergej
-</div>
-
-</body>
-</html>
+    padding:70px
