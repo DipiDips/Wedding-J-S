@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,8 @@
 <style>
 body{
     margin:0;
-    padding:0;
+    font-family:Georgia, serif;
     background:#f5efe6;
-    font-family:Arial, sans-serif;
     color:#4a4038;
 }
 
@@ -20,15 +19,22 @@ body{
 }
 
 .hero h1{
-    font-size:60px;
     color:#c8a264;
+    font-size:70px;
+    margin-bottom:10px;
 }
 
 .hero h2{
-    letter-spacing:4px;
+    letter-spacing:5px;
+    font-weight:normal;
 }
 
-.section{
+.hero p{
+    max-width:600px;
+    margin:20px auto;
+}
+
+.container{
     max-width:900px;
     margin:auto;
     padding:20px;
@@ -36,45 +42,55 @@ body{
 
 .card{
     background:white;
-    padding:25px;
-    margin-bottom:20px;
-    border-radius:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+h3{
+    color:#c8a264;
 }
 
 .button{
     display:inline-block;
     background:#c8a264;
     color:white;
-    padding:10px 15px;
-    border-radius:20px;
+    padding:10px 16px;
     text-decoration:none;
+    border-radius:30px;
+    margin-top:10px;
 }
 
-input, select{
+input,select{
     width:100%;
-    padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
+    padding:12px;
+    margin:8px 0 15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.footer{
+    text-align:center;
+    padding:50px;
+    font-style:italic;
 }
 </style>
 </head>
-
 <body>
 
 <div class="hero">
     <h1>Jelena & Sergej</h1>
     <h2>17 OCTOBER 2026</h2>
-
     <p>
-        Together with our families, we invite you to celebrate our wedding day.
+        We invite you to celebrate our wedding day.
     </p>
 </div>
 
-<div class="section">
+<div class="container">
 
     <div class="card">
-        <h2>Wedding Day</h2>
+        <h3>Wedding Day</h3>
 
         <p>
             <strong>13:30</strong><br>
@@ -82,9 +98,9 @@ input, select{
             Hram Svete Petke, Rušanj
         </p>
 
-        <a class="buttonle.com/maps/search/Hram+Svete+Petke+Rusanj
+        https://www.google.com/maps/search/Hram+Svete+Petke+Rusanj
 
-        <hr>
+        <hr style="margin:25px 0;">
 
         <p>
             <strong>15:45</strong><br>
@@ -92,22 +108,21 @@ input, select{
             Garden Hill, Novi Beograd
         </p>
 
-        <a class="button" href="https://www.Garden+Hill+Novi+Beograd
-            View Venue Map
-        </a>
+        https://www.google.com/maps/search/Garden+Hill+Novi+Beograd
     </div>
 
     <div class="card">
-        <h2>Accommodation</h2>
+        <h3>Accommodation</h3>
 
         <p>
-            Accommodation available at Garden Hill.<br>
+            Accommodation is available at Garden Hill.
+            <br><br>
             €25 per person / one night.
         </p>
     </div>
 
     <div class="card">
-        <h2>RSVP</h2>
+        <h3>RSVP</h3>
 
         <label>Name(s) on invitation</label>
         <input type="text">
@@ -118,28 +133,32 @@ input, select{
             <option>Regretfully decline</option>
         </select>
 
-        <label>Accommodation needed?</label>
+        <label>Would you like accommodation?</label>
         <select>
             <option>Yes</option>
             <option>No</option>
         </select>
     </div>
 
- <div class="card">
+    <div class="card">
+        <h3>Little Ones</h3>
 
-    <h2>Little Ones</h2>
+        <p>
+            We love your little ones. As there will be no dedicated children's entertainment area during the celebration, we would be delighted if you could enjoy a grown‑ups' evening with us.
+        </p>
 
-    <p>
-        We love your little ones. As there will be no dedicated children's entertainment area during the celebration, we would be delighted if you could enjoy a grown-ups' evening with us.
-        <br><br>
-        If bringing your children is necessary, please let us know their names and ages below.
-    </p>
+        <p>
+            If bringing your children is necessary, please let us know their names and ages.
+        </p>
 
-    <input type="text" placeholder="Child Name">
-    <input type="number" placeholder="Age">
+        <input type="text" placeholder="Child Name">
+        <input type="number" placeholder="Age">
+    </div>
 
 </div>
 
+<div class="footer">
+    Every love story is beautiful, but ours is our favorite.
 </div>
 
 </body>
