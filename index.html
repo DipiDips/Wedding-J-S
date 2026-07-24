@@ -6,15 +6,15 @@
 
 <title>Jelena & Sergej</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapisamily=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
---gold:#c8a66b;
---champagne:#f8f3ec;
---text:#4d433d;
---white:#ffffff;
+--gold:#c6a15b;
+--champagne:#f5f0e8;
+--ivory:#fffdf9;
+--text:#55463d;
 }
 
 *{
@@ -24,283 +24,75 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Montserrat,sans-serif;
+font-family:'Montserrat',sans-serif;
 background:var(--champagne);
 color:var(--text);
-line-height:1.6;
 }
 
 .hero{
-min-height:100vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:40px;
+padding:20px;
 background:
-linear-gradient(rgba(248,243,236,.9),rgba(248,243,236,.95));
+radial-gradient(circle at top right,#fffdf9 0%,#f5f0e8 60%);
 }
 
-.names{
-font-family:'Great Vibes',cursive;
-font-size:5rem;
+.hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:90px;
+font-weight:300;
+letter-spacing:3px;
 color:var(--gold);
 }
 
-.date{
-font-size:1.4rem;
-letter-spacing:3px;
+.hero h2{
 margin-top:15px;
+font-weight:300;
+letter-spacing:6px;
 }
 
-.subtitle{
+.hero p{
+margin-top:20px;
 max-width:600px;
-margin-top:25px;
+font-size:18px;
 }
 
-.lang-switch{
+.lang{
 position:fixed;
 top:20px;
 right:20px;
-display:flex;
-gap:10px;
+z-index:100;
 }
 
-.lang-switch button{
+.lang button{
 border:none;
-padding:10px 15px;
+background:white;
+padding:10px 14px;
 border-radius:30px;
 cursor:pointer;
-background:white;
+margin-left:5px;
 }
 
 .section{
-max-width:900px;
+max-width:1000px;
 margin:auto;
-padding:80px 25px;
+padding:70px 20px;
 }
 
 .card{
 background:white;
+padding:35px;
 border-radius:25px;
-padding:30px;
+box-shadow:0 8px 30px rgba(0,0,0,.08);
 margin-bottom:25px;
-box-shadow:0 10px 25px rgba(0,0,0,.07);
 }
 
-h2{
-font-family:'Playfair Display',serif;
-margin-bottom:20px;
+h3{
+font-family:'Cormorant Garamond',serif;
+font-size:38px;
 color:var(--gold);
-}
-
-.timeline-item{
-margin-bottom:20px;
-}
-
-.btn{
-display:inline-block;
-padding:12px 22px;
-background:var(--gold);
-color:white;
-text-decoration:none;
-border-radius:30px;
-margin-top:10px;
-}
-
-.footer{
-text-align:center;
-padding:60px 20px;
-font-style:italic;
-}
-
-input,
-select,
-textarea{
-width:100%;
-padding:12px;
-margin-top:8px;
-margin-bottom:18px;
-border:1px solid #ddd;
-border-radius:10px;
-}
-
-.submit{
-border:none;
-background:var(--gold);
-color:white;
-padding:15px 25px;
-border-radius:30px;
-cursor:pointer;
-}
-</style>
-</head>
-<body>
-
-<div class="lang-switch">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('sr')">SR</button>
-<button onclick="setLang('sk')">SK</button>
-</div>
-
-<section class="hero">
-
-<h1 class="names">Jelena & Sergej</h1>
-
-<div class="date">17 OCTOBER 2026</div>
-
-<p class="subtitle" id="welcome">
-We are delighted to celebrate our special day with you.
-</p>
-
-</section>
-
-<section class="section">
-
-<div class="card">
-
-<h2 id="ourday">Our Day</h2>
-
-<div class="timeline-item">
-<strong id="churchLabel">Church Ceremony</strong><br>
-Hram Svete Petke, Rušanj<br>
-13:30
-</div>
-
-.google.com/maps/search/Hram+Svete+Petke+Rusanj"
-target="_blank">
-Map
-</a>
-
-<hr style="margin:30px 0">
-
-<div class="timeline-item">
-<strong id="civilLabel">Civil Ceremony</strong><br>
-Garden Hill, Novi Beograd<br>
-15:45
-</div>
-
-/search/Garden+Hill+Novi+Beograd"
-target="_blank">
-Map
-</a>
-
-</div>
-
-<div class="card">
-<h2 id="accommodationTitle">Accommodation</h2>
-
-<p id="accommodationText">
-Accommodation is available at Garden Hill.
-€25 per person for one night.
-</p>
-
-<select>
-<option>Yes</option>
-<option>No</option>
-</select>
-
-</div>
-
-<div class="card">
-
-<h2>RSVP</h2>
-
-<form>
-
-<label>Name</label>
-<input type="text">
-
-<label>Will you attend?</label>
-<select>
-<option>Yes, with pleasure</option>
-<option>Regretfully decline</option>
-</select>
-
-<label>Dietary requirements</label>
-<textarea></textarea>
-
-<button class="submit">
-Submit
-</button>
-
-</form>
-
-</div>
-
-<div class="card">
-
-<h2 id="childrenTitle">Little Ones</h2>
-
-<p id="childrenText">
-We love your little ones. As there will be no dedicated children's entertainment area during the celebration, we would be delighted if you could enjoy a grown-ups' evening with us. If bringing your children is necessary, please let us know their names and ages.
-</p>
-
-<input placeholder="Child name">
-<input placeholder="Age">
-
-</div>
-
-</section>
-
-<footer class="footer">
-Every love story is beautiful, but ours is our favorite.
-</footer>
-
-<script>
-
-const translations = {
-
-en:{
-welcome:"We are delighted to celebrate our special day with you.",
-ourday:"Our Day",
-church:"Church Ceremony",
-civil:"Civil Ceremony",
-accommodation:"Accommodation",
-accommodationText:"Accommodation is available at Garden Hill. €25 per person for one night.",
-children:"Little Ones",
-childrenText:"We love your little ones. As there will be no dedicated children's entertainment area during the celebration, we would be delighted if you could enjoy a grown-ups' evening with us. If bringing your children is necessary, please let us know their names and ages."
-},
-
-sr:{
-welcome:"Radujemo se što ćemo naš poseban dan proslaviti sa vama.",
-ourday:"Naš Dan",
-church:"Crkveno Venčanje",
-civil:"Građansko Venčanje",
-accommodation:"Smeštaj",
-accommodationText:"Smeštaj je dostupan u Garden Hill-u. Cena je 25€ po osobi za jedno noćenje.",
-children:"Najmlađi Gosti",
-childrenText:"Volimo vaše mališane. Kako tokom proslave neće biti organizovan poseban program za decu, bili bismo srećni ukoliko biste mogli da uživate u večeri za odrasle. Ukoliko je potrebno da povedete decu, molimo vas da navedete njihova imena i uzrast."
-},
-
-sk:{
-welcome:"Tešíme sa, že s vami oslávime náš výnimočný deň.",
-ourday:"Náš Deň",
-church:"Cirkevný Obrad",
-civil:"Občiansky Sobáš",
-accommodation:"Ubytovanie",
-accommodationText:"V Garden Hill je dostupné ubytovanie. Cena je 25 € na osobu za jednu noc.",
-children:"Deti",
-childrenText:"Vaše deti máme veľmi radi. Keďže počas oslavy nebude pripravený detský program, budeme radi, ak si užijete večer určený pre dospelých. Ak je potrebné priviesť deti, uveďte prosím ich mená a vek."
-}
-
-};
-
-function setLang(lang){
-
-document.getElementById('welcome').innerText=translations[lang].welcome;
-document.getElementById('ourday').innerText=translations[lang].ourday;
-document.getElementById('churchLabel').innerText=translations[lang].church;
-document.getElementById('civilLabel').innerText=translations[lang].civil;
-document.getElementById('accommodationTitle').innerText=translations[lang].accommodation;
-document.getElementById('accommodationText').innerText=translations[lang].accommodationText;
-document.getElementById('childrenTitle').innerText=translations[lang].children;
-document.getElementById('childrenText').innerText=translations[lang].childrenText;
-
-}
-
-</script>
-
-</body>
-</html>
+margin-bottom:20px
