@@ -1,231 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jelena & Sergej</title>
 
-    <title>Jelena & Sergej</title>
+<style>
+body{
+    margin:0;
+    padding:0;
+    background:#f5efe6;
+    font-family:Arial, sans-serif;
+    color:#4a4038;
+}
 
-    <style>
-        :root {
-            --gold: #c8a264;
-            --champagne: #f5efe6;
-            --white: #ffffff;
-            --text: #4a4038;
-        }
+.hero{
+    text-align:center;
+    padding:120px 20px;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.hero h1{
+    font-size:60px;
+    color:#c8a264;
+}
 
-        body {
-            font-family: Georgia, serif;
-            background: var(--champagne);
-            color: var(--text);
-        }
+.hero h2{
+    letter-spacing:4px;
+}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px;
-        }
+.section{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
 
-        .hero h1 {
-            font-size: 4rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
-        .hero h2 {
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-        }
+.button{
+    display:inline-block;
+    background:#c8a264;
+    color:white;
+    padding:10px 15px;
+    border-radius:20px;
+    text-decoration:none;
+}
 
-        .hero p {
-            max-width: 600px;
-            font-size: 1.1rem;
-        }
-
-        .section {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        h3 {
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .timeline-item {
-            margin-bottom: 25px;
-        }
-
-        .time {
-            font-size: 1.4rem;
-            color: var(--gold);
-            font-weight: bold;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 10px;
-            background: var(--gold);
-            color: white;
-            padding: 10px 18px;
-            border-radius: 30px;
-            text-decoration: none;
-        }
-
-        input,
-        select {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-
-        button {
-            background: var(--gold);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 60px 20px;
-            font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-        }
-    </style>
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+</style>
 </head>
 
 <body>
 
-    <section class="hero">
-        <h1>Jelena & Sergej</h1>
+<div class="hero">
+    <h1>Jelena & Sergej</h1>
+    <h2>17 OCTOBER 2026</h2>
 
-        <h2>17 OCTOBER 2026</h2>
+    <p>
+        Together with our families, we invite you to celebrate our wedding day.
+    </p>
+</div>
+
+<div class="section">
+
+    <div class="card">
+        <h2>Wedding Day</h2>
 
         <p>
-            We invite you to celebrate our wedding day and create beautiful memories with us.
+            <strong>13:30</strong><br>
+            Church Ceremony<br>
+            Hram Svete Petke, Rušanj
         </p>
-    </section>
 
-    <section class="section">
+        <a class="buttonle.com/maps/search/Hram+Svete+Petke+Rusanj
 
-        <div class="card">
-            <h3>Wedding Day</h3>
+        <hr>
 
-            <div class="timeline-item">
-                <div class="time">13:30</div>
-                <strong>Church Ceremony</strong><br>
-                Hram Svete Petke, Rušanj
-                <br><br>
-                https://www.google.com/maps/search/Hram+Svete+Petke+Rusanj
-                    View Church Map
-                </a>
-            </div>
+        <p>
+            <strong>15:45</strong><br>
+            Civil Ceremony<br>
+            Garden Hill, Novi Beograd
+        </p>
 
-            <hr><br>
-
-            <div class="timeline-item">
-                <div class="time">15:45</div>
-                <strong>Civil Ceremony</strong><br>
-                Garden Hill, Novi Beograd
-                <br><br>
-                .com/maps/search/Garden+Hill+Novi+Beograd"
-                   target="_blank">
-                    View Venue Map
-                </a>
-            </div>
-
-            <hr><br>
-
-            <div class="timeline-item">
-                <div class="time">16:30+</div>
-                <strong>Celebration</strong><br>
-                Garden Hill, Novi Beograd
-            </div>
-        </div>
-
-        <div class="card">
-            <h3>Accommodation</h3>
-
-            <p>
-                Accommodation is available at Garden Hill.
-                <br><br>
-                €25 per person / one night.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>RSVP</h3>
-
-            <label>Name(s) on invitation</label>
-            <input type="text" placeholder="Your name(s)">
-
-            <label>Will you attend?</label>
-            <select>
-                <option>Yes, with pleasure</option>
-                <option>Regretfully decline</option>
-            </select>
-
-            <label>Would you like accommodation?</label>
-            <select>
-                <option>Yes</option>
-                <option>No</option>
-            </select>
-
-            <button type="button">
-                Submit RSVP
-            </button>
-        </div>
-
-        <div class="card">
-            <h3>Little Ones</h3>
-
-            <p>
-                We love your little ones. As there will be no dedicated children's entertainment area during the celebration, we would be delighted if you could enjoy a grown‑ups' evening with us.
-                <br><br>
-                If bringing your children is necessary, please let us know their names and ages below.
-            </p>
-
-            <br>
-
-            <input type="text" placeholder="Child Name">
-            <input type="number" placeholder="Age">
-        </div>
-
-    </section>
-
-    <div class="footer">
-        Every love story is beautiful, but ours is our favorite.
+        <a class="button" href="https://www.arden+Hill+Novi+Beograd
+            View Venue Map
+        </a>
     </div>
 
-</body>
-</html>
+    <div class="card">
+        <h2>Accommodation</h2>
+
+        <p>
+            Accommodation available at Garden Hill.<br>
+            €25 per person / one night.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>RSVP</h2>
+
+        <label>Name(s) on invitation</label>
+        <input type="text">
+
+        <label>Will you attend?</label>
+        <select>
+            <option>Yes, with pleasure</option>
+            <option>Regretfully decline</option>
+        </select>
+
+        <label>Accommodation needed?</label>
+        <select>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h2>Little Ones</h2>
+
+        <p>
+            We love your little ones. As there will be no dedicated 
