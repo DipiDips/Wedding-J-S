@@ -197,31 +197,38 @@ label{display:block;margin-top:10px;font-size:19px}input,select{width:100%;paddi
 
     <label data-i18n="needAccommodation"></label>
 
-    <select id="accommodation">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
+<select id="accommodation">
+    <option value="No" selected>No</option>
+    <option value="Yes">Yes</option>
+</select>
+
+<div id="accommodationDetails" style="display:none;">
+
+    <label data-i18n="peopleForAccommodation">
+        Number of people requiring accommodation
+    </label>
+
+    <select id="accommodationGuests">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
     </select>
 
-    <div id="accommodationDetails">
+    <label data-i18n="roomCount">
+        Number of rooms
+    </label>
 
-        <label data-i18n="peopleForAccommodation"></label>
-        <input
-            type="number"
-            id="accommodationGuests"
-            min="0"
-            value="0"
-        >
+    <select id="rooms">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
 
-        <label data-i18n="roomCount"></label>
-        <select id="rooms">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-
-    </div>
+</div>
 
 </div>
 
@@ -425,14 +432,15 @@ document.addEventListener("submit", async function(e){
     button.disabled = true;
     button.textContent = "Sending...";
 
-    const data = {
-        name: document.getElementById("name").value,
-        surname: document.getElementById("surname").value,
-        attending: document.getElementById("attending").value,
-        guests: document.getElementById("cnt").value,
-        accommodation: document.getElementById("accommodation").value,
-        rooms: document.getElementById("rooms").value
-    };
+const data = {
+    name: document.getElementById("name").value,
+    surname: document.getElementById("surname").value,
+    attending: document.getElementById("attending").value,
+    guests: document.getElementById("cnt").value,
+    accommodation: document.getElementById("accommodation").value,
+    accommodationGuests: document.getElementById("accommodationGuests")?.value || "0",
+    rooms: document.getElementById("rooms")?.value || "0"
+};
 
     try {
 
