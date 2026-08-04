@@ -158,29 +158,57 @@ label{display:block;margin-top:10px;font-size:19px}input,select{width:100%;paddi
         </div>
 
         <div class="panel">
-            <div class="title">RSVP</div>
-            <label data-i18n="guestCount"></label>
-            <select id="cnt">
-                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+    <div class="title">RSVP</div>
+
+    <form id="rsvpForm">
+
+        <label data-i18n="guestCount"></label>
+
+        <select id="cnt">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+
+        <div id="guests"></div>
+
+        <label data-i18n="attending"></label>
+        <select id="attending">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label data-i18n="needAccommodation"></label>
+        <select id="accommodation">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <div id="roomsContainer">
+            <label data-i18n="roomCount"></label>
+            <select id="rooms">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
             </select>
-            <div id="guests"></div>
         </div>
 
-        <div class="panel">
-            <div class="title" data-i18n="accommodation"></div>
-            <p class="section-text" data-i18n-html="accommodationText"></p>
-            <label data-i18n="needAccommodation"></label>
-            <select>
-                <option data-i18n="yes"></option>
-                <option data-i18n="no"></option>
-            </select>
-            <label data-i18n="peopleForAccommodation"></label>
-            <input type="number" min="0">
-            <label data-i18n="roomCount"></label>
-            <select>
-                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-            </select>
-        </div>
+        <button
+            type="submit"
+            class="action-btn"
+            style="width:100%;margin-top:20px;cursor:pointer;"
+        >
+            Submit RSVP
+        </button>
+
+    </form>
+
+</div>
     </div>
 </div>
 
@@ -278,28 +306,60 @@ function applyLanguage(lang){
         btn.classList.toggle("active", btn.dataset.lang === lang);
     });
 
-    renderGuests();
-}
+function renderGuests() {
 
-function renderGuests(){
     const countSelect = document.getElementById("cnt");
     const guestsDiv = document.getElementById("guests");
+
+    if (!countSelect || !guestsDiv) return;
+
     const n = parseInt(countSelect.value, 10);
+
     let html = "";
 
-    for(let i = 1; i <= n; i++){
+    for (let i = 1; i <= n; i++) {
+
         html += `
-            <label>${translations[currentLanguage].guest} ${i}</label>
-            <input type="text">
-            <label>${translations[currentLanguage].attending}</label>
-            <select>
-                <option>${translations[currentLanguage].yes}</option>
-                <option>${translations[currentLanguage].no}</option>
-            </select>
+        <div style="
+            border:1px solid var(--gold);
+            border-radius:16px;
+            padding:18px;
+            margin-bottom:20px;
+        ">
+
+            <h3>${translations[currentLanguage].guest} ${i}</h3>
+
+            <div style="
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:15px;
+            ">
+
+                <div>
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        ${i === 1 ? 'id="name" required' : ''}
+                    >
+                </div>
+
+                <div>
+                    <label>Surname</label>
+                    <input
+                        type="text"
+                        ${i === 1 ? 'id="surname" required' : ''}
+                    >
+                </div>
+
+            </div>
+
+        </div>
         `;
     }
+
     guestsDiv.innerHTML = html;
 }
+
 
 document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
@@ -310,38 +370,82 @@ applyLanguage(currentLanguage);
 </script>
 	<script>
 
-document
-  .getElementById("rsvpForm")
-  .addEventListener("submit", async function (e) {
+const scriptUrl = "https://script.google.com/macros/s/AKfycbzPEsscWPnyyfqKBZo8dM1yIc_nUE0kk4heqiso74KZlBnfcsee5h7jw7RCViILNFNVUA/exec";
+
+document.addEventListener("change", function(e){
+
+    if(e.target.id === "accommodation"){
+
+        const roomsContainer =
+            document.getElementById("roomsContainer");
+
+        roomsContainer.style.display =
+            e.target.value === "Yes"
+                ? "block"
+                : "none";
+    }
+});
+
+document.addEventListener("submit", async function(e){
+
+    if(e.target.id !== "rsvpForm") return;
 
     e.preventDefault();
 
+    const button =
+        document.querySelector("#rsvpForm button");
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+
     const data = {
-      name: document.getElementById("name").value,
-      surname: document.getElementById("surname").value,
-      attending: document.getElementById("attending").value,
-      guests: document.getElementById("guests").value,
-      accommodation: document.getElementById("accommodation").value,
-      rooms: document.getElementById("rooms").value
+        name: document.getElementById("name").value,
+        surname: document.getElementById("surname").value,
+        attending: document.getElementById("attending").value,
+        guests: document.getElementById("cnt").value,
+        accommodation: document.getElementById("accommodation").value,
+        rooms: document.getElementById("rooms").value
     };
 
-    const response = await fetch(
-      "PASTE_YOUR_SCRIPT_URL_HERE",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      }
-    );
+    try {
 
-    const result = await response.json();
+        await fetch(scriptUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-    alert(
-      "Thank you! Your RSVP ID is: " +
-      result.rsvpId
-    );
+        alert(
+            "❤️ Thank you for your response! ❤️\n\nWe can't wait to celebrate with you!"
+        );
+
+        document.getElementById("rsvpForm").reset();
+
+        renderGuests();
+
+    } catch(error){
+
+        console.error(error);
+
+        alert(
+            "Something went wrong. Please try again."
+        );
+
+    } finally {
+
+        button.disabled = false;
+        button.textContent = "Submit RSVP";
+
+    }
+});
+
+window.addEventListener("load", () => {
+
+    renderGuests();
+
+    document.getElementById("roomsContainer").style.display = "none";
 
 });
 
