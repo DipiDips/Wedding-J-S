@@ -306,6 +306,9 @@ function applyLanguage(lang){
         btn.classList.toggle("active", btn.dataset.lang === lang);
     });
 
+    renderGuests();
+}
+
 function renderGuests() {
 
     const countSelect = document.getElementById("cnt");
@@ -326,7 +329,6 @@ function renderGuests() {
             padding:18px;
             margin-bottom:20px;
         ">
-
             <h3>${translations[currentLanguage].guest} ${i}</h3>
 
             <div style="
@@ -334,7 +336,6 @@ function renderGuests() {
                 grid-template-columns:1fr 1fr;
                 gap:15px;
             ">
-
                 <div>
                     <label>Name</label>
                     <input
@@ -350,15 +351,14 @@ function renderGuests() {
                         ${i === 1 ? 'id="surname" required' : ''}
                     >
                 </div>
-
             </div>
-
         </div>
         `;
     }
 
     guestsDiv.innerHTML = html;
 }
+
 
 
 document.querySelectorAll(".lang-btn").forEach(btn => {
