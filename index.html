@@ -1,51 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jelena & Sergej | 17 October 2026</title>
+
+<title>17 October 2026</title>
+
 <style>
-:root{--burgundy:#7b1e2b;--gold:#b08a4f;--goldlight:#eadfc7;--text:#4a4038;--cream:#faf7f2}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Georgia,serif;background:#fff;color:var(--text);line-height:1.6}
-.hero{padding:120px 20px;text-align:center;background:linear-gradient(to bottom,#fff,#faf7f2)}
-.monogram{color:var(--gold);letter-spacing:8px;font-size:24px}
-h1{font-size:72px;color:var(--burgundy);font-style:italic;font-weight:normal}
-.line{width:120px;height:2px;background:var(--gold);margin:20px auto}
-.hero h2{color:var(--gold);letter-spacing:5px;font-weight:normal}
-.hero p{max-width:700px;margin:20px auto}
-.container{max-width:950px;margin:auto;padding:40px 20px}
-.card{background:#fff;border:1px solid var(--goldlight);border-radius:24px;padding:35px;margin-bottom:25px;box-shadow:0 8px 20px rgba(0,0,0,.06)}
-h3{color:var(--gold);font-size:32px;margin-bottom:20px}
-.time{color:var(--burgundy);font-weight:bold;font-size:24px}
-.btn{display:inline-block;background:var(--burgundy);color:#fff;text-decoration:none;padding:10px 18px;border-radius:25px;margin-top:10px}
-.notice{background:var(--cream);border-left:4px solid var(--gold);padding:15px;border-radius:8px;margin-bottom:20px}
-label{display:block;margin-top:10px}
-input,select{width:100%;padding:12px;margin:8px 0 15px;border:1px solid #ddd;border-radius:8px}
-.footer{text-align:center;padding:60px;color:#666}
-@media(max-width:768px){h1{font-size:48px}}
-</style>
-</head>
-<body>
-<section class="hero">
-<div class="monogram">J &amp; S</div>
-<h1>Jelena &amp; Sergej</h1>
-<div class="line"></div>
-<h2>17 OCTOBER 2026</h2>
-<p>Together with our families, we invite you to celebrate our wedding day and create unforgettable memories with us.</p>
-</section>
-<div class="container">
-<div class="card">
-<h3>Wedding Day</h3>
-<p><span class="time">13:30</span><br><strong>Church Ceremony</strong><br>Hram Svete Petke, Rušanj</p>
-<a class="btn" href="https://www.google.com/maps/search/Hram+Svete+Petke+Rusanj" target="_blank">View Church Map</a>
-<hr style="margin:25px 0">
-<p><span class="time">15:45</span><br><strong>Civil Ceremony</strong><br>Garden Hill, Novi Beograd</p>
-<a class="btn" href="https://www.google.com/maps/search/Garden+Hill+Novi+Beograd" target="_blank">View Venue Map</a>
-</div>
-<div class="card"><h3>Accommodation</h3><p>Accommodation is available at Garden Hill.<br><br>€25 per person / one night.</p></div>
-<div class="card"><h3>RSVP</h3><div class="notice">Please note that each invitation is issued to specific named guest(s) and is not transferable. We kindly ask that only the person(s) named on the invitation respond and attend.</div><label>Name(s) on invitation</label><input type="text"><label>Will you attend?</label><select><option>Yes, with pleasure</option><option>Regretfully decline</option></select><label>Would you like accommodation?</label><select><option>Yes</option><option>No</option></select></div>
-<div class="card"><h3>Little Ones</h3><p>We love your little ones. As there will be no dedicated children's entertainment area during the celebration, we would be delighted if you could enjoy a grown-ups' evening with us.</p><br><p>If bringing your children is necessary, please let us know their names and ages below.</p><br><input type="text" placeholder="Child Name"><input type="number" placeholder="Age"></div>
-</div>
-<div class="footer">✦<br><br>Every love story is beautiful, but ours is our favorite.<br><br><strong>Jelena &amp; Sergej</strong></div>
-</body></html>
+
+:root{
+--burgundy:#7b1e2b;
+--gold:#b08a4f;
+--goldlight:#eadfc7;
+--cream:#faf7f2;
+--text:#4a4038;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Georgia,serif;
+color:var(--text);
+background:#fff;
+line-height:1.7;
+}
+
+.hero{
+position:relative;
+overflow:hidden;
+text-align:center;
+padding:120px 20px;
+background:
+radial-gradient(circle at 15% 20%, rgba(123,30,43,.15) 0 4px, transparent 5px),
+radial-gradient(circle at 80% 35%, rgba(123,30,43,.15) 0 4px, transparent 5px),
+radial-gradient(circle at 60% 80%, rgba(123,30,43,.12) 0 4px, transparent 5px),
+linear-gradient(180deg,#ffffff,#faf7f2,#ffffff);
+}
+
+.hero::after{
+content:"";
+position:absolute;
+left:-10%;
+bottom:-140px;
+width:120%;
+height:260px;
+background:linear-gradient(90deg,#d8c299,#fff,#d8c299);
+border-radius:50%;
+transform:rotate(-2deg);
+}
+
+.language-bar{
+text-align:right;
+padding:15px 20px;
+}
+
+.language-bar button{
+border:none;
+background:white;
+cursor:pointer;
+color:var(--burgundy);
+font-size:15px;
+margin-left:10px;
+font-weight:bold;
+}
+
+.hero h1{
+font-size:72px;
+font-style:italic;
+font-weight:normal;
+color:var(--burgundy);
+position:relative;
+z-index:2;
+}
+
+.line{
+width:120px;
+height:2px;
+background:var(--gold);
+margin:20px auto;
+position:relative;
+z-index:2;
+}
+
+.hero h2{
+color:var(--gold);
+letter-spacing:4px;
+font-weight:normal;
+position:relative;
+z-index:2;
+}
+
+.hero p{
+max-width:700px;
+margin:20px auto;
+position:relative;
+z-index:2;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:#fff;
+border:1px solid var(--goldlight);
+border-radius:25px;
+padding:35px;
+margin-bottom:25px;
+box-shadow:0 8px 18px rgba(0,0,0,.06);
+}
+
+h3{
+color:var(--gold);
+font-size:32px;
+margin-bottom:20px;
+}
+
+.time{
+color:var(--burgundy);
+font-size:24px;
+font-weight:bold;
+}
+
+.timeline-row{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.timeline-box{
+flex:1;
+min-width:250px;
+text-align:center;
+padding:20px;
+border:1px solid var(--goldlight);
+border-radius:18px;
+}
+
+.image-card{
+display:flex;
+gap:20px;
+align-items:center;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.image-card img{
+width:260px;
+border-radius:18px;
+}
+
+label{
+display:block;
+margin-top:10px;
+}
+
+input,select{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+margin-top:8px;
+margin-bottom:15px;
+}
+
+.footer{
+text-align:center;
+padding:70px 20px;
+color:#
