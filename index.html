@@ -180,23 +180,50 @@ label{display:block;margin-top:10px;font-size:19px}input,select{width:100%;paddi
             <option value="No">No</option>
         </select>
 
-        <label data-i18n="needAccommodation"></label>
-        <select id="accommodation">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
+<div class="panel">
+
+    <div class="title" data-i18n="accommodation"></div>
+
+    <p class="section-text">
+        Accommodation is available directly at Garden Hill.
+        <br><br>
+        <strong>35 € per person per night.</strong>
+        <br><br>
+        Available room types:
+        <br>• 2-bed room
+        <br>• 3-bed room
+        <br>• 4-bed room
+    </p>
+
+    <label data-i18n="needAccommodation"></label>
+
+    <select id="accommodation">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <div id="accommodationDetails">
+
+        <label data-i18n="peopleForAccommodation"></label>
+        <input
+            type="number"
+            id="accommodationGuests"
+            min="0"
+            value="0"
+        >
+
+        <label data-i18n="roomCount"></label>
+        <select id="rooms">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
         </select>
 
-        <div id="roomsContainer">
-            <label data-i18n="roomCount"></label>
-            <select id="rooms">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-        </div>
+    </div>
+
+</div>
 
         <button
             type="submit"
