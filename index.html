@@ -373,17 +373,19 @@ function renderGuests() {
                 <div>
                     <label>Name</label>
                     <input
-                        type="text"
-                        ${i === 1 ? 'id="name" required' : ''}
-                    >
+    type="text"
+    id="guest${i}Name"
+    ${i === 1 ? 'required' : ''}
+/>
                 </div>
 
                 <div>
                     <label>Surname</label>
                     <input
-                        type="text"
-                        ${i === 1 ? 'id="surname" required' : ''}
-                    >
+    type="text"
+    id="guest${i}Surname"
+    ${i === 1 ? 'required' : ''}
+/>
                 </div>
             </div>
         </div>
@@ -432,14 +434,33 @@ document.addEventListener("submit", async function(e){
     button.disabled = true;
     button.textContent = "Sending...";
 
+let guestList = [];
+
+for(let i = 1; i <= 5; i++){
+
+    const name =
+        document.getElementById(`guest${i}Name`)?.value || "";
+
+    const surname =
+        document.getElementById(`guest${i}Surname`)?.value || "";
+
+    if(name.trim() || surname.trim()){
+
+        guestList.push(
+            `${name} ${surname}`.trim()
+        );
+    }
+}
+
 const data = {
-    name: document.getElementById("name").value,
-    surname: document.getElementById("surname").value,
+    name: guestList.join(", "),
+    surname: "",
     attending: document.getElementById("attending").value,
     guests: document.getElementById("cnt").value,
     accommodation: document.getElementById("accommodation").value,
-    accommodationGuests: document.getElementById("accommodationGuests")?.value || "0",
-    rooms: document.getElementById("rooms")?.value || "0"
+    rooms: document.getElementById("rooms").value,
+    accommodationGuests:
+        document.getElementById("accommodationGuests")?.value || ""
 };
 
     try {
