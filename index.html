@@ -453,8 +453,21 @@ for(let i = 1; i <= 5; i++){
 }
 
 const data = {
-    name: guestList.join(", "),
-    surname: "",
+    name: document.getElementById("guest1Name")?.value || "",
+    surname: document.getElementById("guest1Surname")?.value || "",
+
+    guest2Name: document.getElementById("guest2Name")?.value || "",
+    guest2Surname: document.getElementById("guest2Surname")?.value || "",
+
+    guest3Name: document.getElementById("guest3Name")?.value || "",
+    guest3Surname: document.getElementById("guest3Surname")?.value || "",
+
+    guest4Name: document.getElementById("guest4Name")?.value || "",
+    guest4Surname: document.getElementById("guest4Surname")?.value || "",
+
+    guest5Name: document.getElementById("guest5Name")?.value || "",
+    guest5Surname: document.getElementById("guest5Surname")?.value || "",
+
     attending: document.getElementById("attending").value,
     guests: document.getElementById("cnt").value,
     accommodation: document.getElementById("accommodation").value,
