@@ -176,30 +176,21 @@ label{display:block;margin-top:10px;font-size:19px}input,select{width:100%;paddi
 
         <label data-i18n="attending"></label>
         <select id="attending">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+    		<option value="Yes" data-i18n="yes"></option>
+    		<option value="No" data-i18n="no"></option>
+		</select>
 
 <div class="panel">
 
     <div class="title" data-i18n="accommodation"></div>
 
-    <p class="section-text">
-        Accommodation is available directly at Garden Hill.
-        <br><br>
-        <strong>35 € per person per night.</strong>
-        <br><br>
-        Available room types:
-        <br>• 2-bed room
-        <br>• 3-bed room
-        <br>• 4-bed room
-    </p>
+    <p class="section-text" data-i18n-html="accommodationInfo"></p>
 
     <label data-i18n="needAccommodation"></label>
 
 <select id="accommodation">
-    <option value="No" selected>No</option>
-    <option value="Yes">Yes</option>
+    <option value="No" selected data-i18n="no"></option>
+    <option value="Yes" data-i18n="yes"></option>
 </select>
 
 <div id="accommodationDetails" style="display:none;">
@@ -233,12 +224,11 @@ label{display:block;margin-top:10px;font-size:19px}input,select{width:100%;paddi
 </div>
 
         <button
-            type="submit"
-            class="action-btn"
-            style="width:100%;margin-top:20px;cursor:pointer;"
-        >
-            Submit RSVP
-        </button>
+    type="submit"
+    class="action-btn"
+    style="width:100%;margin-top:20px;cursor:pointer;"
+    data-i18n="submitRsvp"
+></button>
 
     </form>
 
@@ -270,6 +260,11 @@ const translations = {
         needAccommodation: "Da li vam je potreban smeštaj?",
         peopleForAccommodation: "Broj osoba za smeštaj",
         roomCount: "Broj soba"
+		firstName: "Ime",
+		lastName: "Prezime",
+		submitRsvp: "Pošalji RSVP",
+		sending: "Slanje...",
+		accommodationInfo: "Smeštaj je dostupan direktno u objektu Garden Hill.<br><br><strong>35 € po osobi po noćenju.</strong><br><br>Dostupne vrste soba:<br>• Dvokrevetna soba<br>• Trokrevetna soba<br>• Četvorokrevetna soba",
     },
     en: {
         welcome: "We are delighted to celebrate this special day with you.",
@@ -293,6 +288,11 @@ const translations = {
         needAccommodation: "Do you need accommodation?",
         peopleForAccommodation: "Number of people for accommodation",
         roomCount: "Number of rooms"
+		firstName: "Name",
+		lastName: "Surname",
+		submitRsvp: "Submit RSVP",
+		sending: "Sending...",
+		accommodationInfo: "Accommodation is available directly at Garden Hill.<br><br><strong>35 € per person per night.</strong><br><br>Available room types:<br>• 2-bed room<br>• 3-bed room<br>• 4-bed room",
     },
     sk: {
         welcome: "Tešíme sa, že s vami oslávime tento výnimočný deň.",
@@ -316,6 +316,11 @@ const translations = {
         needAccommodation: "Potrebujete ubytovanie?",
         peopleForAccommodation: "Počet osôb na ubytovanie",
         roomCount: "Počet izieb"
+		firstName: "Meno",
+		lastName: "Priezvisko",
+		submitRsvp: "Odoslať RSVP",
+		sending: "Odosielanie...",
+		accommodationInfo: "Ubytovanie je dostupné priamo v objekte Garden Hill.<br><br><strong>35 € za osobu na noc.</strong><br><br>Dostupné typy izieb:<br>• Dvojlôžková izba<br>• Trojlôžková izba<br>• Štvorlôžková izba",
     }
 };
 
@@ -371,7 +376,7 @@ function renderGuests() {
                 gap:15px;
             ">
                 <div>
-                    <label>Name</label>
+                    <label>${translations[currentLanguage].firstName}</label>
                     <input
     type="text"
     id="guest${i}Name"
@@ -380,7 +385,7 @@ function renderGuests() {
                 </div>
 
                 <div>
-                    <label>Surname</label>
+                    <label>${translations[currentLanguage].lastName}</label>
                     <input
     type="text"
     id="guest${i}Surname"
@@ -432,7 +437,8 @@ document.addEventListener("submit", async function(e){
         document.querySelector("#rsvpForm button");
 
     button.disabled = true;
-    button.textContent = "Sending...";
+    button.textContent =
+    translations[currentLanguage].sending;
 
 let guestList = [];
 
